@@ -1,0 +1,41 @@
+#:import utils kivy.utils
+
+<mainscreen>:
+    canvas.before:
+        Color:
+            rgba: 1, 1, 1, 1
+        Rectangle:
+            pos: self.pos
+            size: self.size
+
+    Label:
+        pos_hint: { "center_x": .5, "center_y": .9}
+        text: "FACTIQUE"
+        font_name: "SackersGothicStd-Medium.otf"
+        font_size: "15dp"
+        color: "black"
+
+
+    Label:
+        id: fact
+        pos_hint: {"center_x": 0.5, "center_y": 0.6}
+        size_hint: 0.8, 0.8
+        text: ""
+        color: "black"
+        text_size: self.width, None
+        valign: "top"
+        halign: "center"
+        markup: True
+        font_name: "SackersGothicStd-Medium.otf"
+        font_size: "14dp"
+
+
+    Button:
+        pos_hint: { "center_x": .5, "center_y": .3}
+        size: 195, 100
+        size_hint: None, None
+        text: "NEW FACT"
+        font_name: "SackersGothicStd-Medium.otf"
+        font_size: "11dp"
+        on_press:
+            root.update()
